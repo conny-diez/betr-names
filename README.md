@@ -2,7 +2,7 @@
 
 Namensfinder für werdende Eltern. Zwei Personen, ein gemeinsamer Raum, zwei
 Geräte: jeder bewertet Namen für sich, sichtbar wird ausschließlich die
-Übereinstimmung. Umsetzung von `PRD-Namensfinder.md`.
+Übereinstimmung.
 
 > Dieses Produkt sucht keine Namen. Es moderiert eine Verhandlung zwischen zwei
 > Menschen, die sich nicht wehtun wollen.
