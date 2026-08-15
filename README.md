@@ -1,4 +1,4 @@
-# Zwei Listen
+# Betr Names
 
 Namensfinder für werdende Eltern. Zwei Personen, ein gemeinsamer Raum, zwei
 Geräte: jeder bewertet Namen für sich, sichtbar wird ausschließlich die
