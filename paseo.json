@@ -1,0 +1,10 @@
+{
+  "worktree": {
+    "setup": "npm install"
+  },
+  "scripts": {
+    "dev": {
+      "command": "npm run dev"
+    }
+  }
+}

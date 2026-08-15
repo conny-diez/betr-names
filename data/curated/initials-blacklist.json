@@ -1,0 +1,18 @@
+{
+  "_comment": "PRD 5.1.3 — Initialen des vollen Namens gegen problematische Kombinationen. Einträge mit drei oder mehr Buchstaben werden als Teilstring geprüft, längster Treffer gewinnt. Zweibuchstaben-Einträge nur bei exakter Übereinstimmung der ganzen Kette — sonst würde jeder Sophie Ahrens (SA) gewarnt und die Warnung wäre wertlos.",
+  "entries": [
+    { "initials": "ASS", "note": "englisch für Hintern" },
+    { "initials": "ARSCH", "note": "" },
+    { "initials": "AIDS", "note": "" },
+    { "initials": "HIV", "note": "" },
+    { "initials": "KZ", "note": "NS-Abkürzung" },
+    { "initials": "SS", "note": "NS-Abkürzung" },
+    { "initials": "NSU", "note": "" },
+    { "initials": "FKK", "note": "" },
+    { "initials": "SEX", "note": "" },
+    { "initials": "FCK", "note": "" },
+    { "initials": "AFD", "note": "" },
+    { "initials": "NPD", "note": "" },
+    { "initials": "KKK", "note": "" }
+  ]
+}

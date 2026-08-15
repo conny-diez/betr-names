@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+
+# Rohdaten und Zwischenergebnisse der Pipeline: nicht im Repo.
+# Modus A erlaubt sie zwar (privates Repo, keine Weiterverbreitung),
+# aber sie sind reproduzierbar und gross. Siehe PRD 9.1.
+data/raw/
+data/interim/
+
+# Laufzeitdaten
+data/app.sqlite
+data/app.sqlite-journal
+data/app.sqlite-wal
+data/app.sqlite-shm
+.env.local

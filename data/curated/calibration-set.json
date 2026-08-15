@@ -1,0 +1,33 @@
+{
+  "_comment": "PRD 9.7 — die 20 Kalibrierungsnamen sind VON HAND kuratiert, nicht generiert. Kriterium: maximale Streuung auf allen fünf Achsen bei möglichst geringer Korrelation zwischen den Achsen. Jede Achse hat mindestens zwei Namen nahe 0 und zwei nahe 1, bei möglichst neutralen Werten auf den übrigen Achsen.",
+  "_frequency_note": "PRD 5.2.1 verlangt, dass `frequency` aus Statistikdaten berechnet und nicht geschätzt wird. Die hier hinterlegten frequency-Werte sind deshalb nur die erwartete Lage; Pipeline-Schritt 7 überschreibt sie mit dem Datenwert. Schritt 8 prüft, ob die Streuung danach noch ausreicht.",
+  "_anchors": {
+    "era": { "low": ["Friedrich", "Elisabeth", "Kurt"], "high": ["Nevio", "Mayla", "Liam"] },
+    "softness": { "low": ["Kurt", "Birk", "Friedrich"], "high": ["Elia", "Lina", "Mayla"] },
+    "reach": { "low": ["Wiebke", "Kurt", "Emil"], "high": ["Liam", "Elena", "Luca"] },
+    "frequency": { "low": ["Emma", "Paul", "Lina"], "high": ["Aurelian", "Fenja", "Birk"] },
+    "ambiguity": { "low": ["Julia", "Stefan", "Friedrich"], "high": ["Kim", "Luca"] }
+  },
+  "names": [
+    { "name": "Friedrich", "gender": "m", "style_vector": { "era": 0.05, "softness": 0.25, "reach": 0.3,  "frequency": 0.6,  "ambiguity": 0.05 } },
+    { "name": "Elisabeth", "gender": "f", "style_vector": { "era": 0.1,  "softness": 0.5,  "reach": 0.55, "frequency": 0.5,  "ambiguity": 0.05 } },
+    { "name": "Nevio",     "gender": "m", "style_vector": { "era": 0.95, "softness": 0.7,  "reach": 0.65, "frequency": 0.75, "ambiguity": 0.15 } },
+    { "name": "Mayla",     "gender": "f", "style_vector": { "era": 0.9,  "softness": 0.85, "reach": 0.5,  "frequency": 0.7,  "ambiguity": 0.2  } },
+    { "name": "Kurt",      "gender": "m", "style_vector": { "era": 0.15, "softness": 0.05, "reach": 0.2,  "frequency": 0.75, "ambiguity": 0.05 } },
+    { "name": "Birk",      "gender": "m", "style_vector": { "era": 0.55, "softness": 0.05, "reach": 0.35, "frequency": 0.85, "ambiguity": 0.2  } },
+    { "name": "Elia",      "gender": "neutral", "style_vector": { "era": 0.7,  "softness": 0.95, "reach": 0.6,  "frequency": 0.55, "ambiguity": 0.5  } },
+    { "name": "Lina",      "gender": "f", "style_vector": { "era": 0.6,  "softness": 0.9,  "reach": 0.5,  "frequency": 0.2,  "ambiguity": 0.1  } },
+    { "name": "Wiebke",    "gender": "f", "style_vector": { "era": 0.3,  "softness": 0.45, "reach": 0.05, "frequency": 0.8,  "ambiguity": 0.05 } },
+    { "name": "Emil",      "gender": "m", "style_vector": { "era": 0.35, "softness": 0.5,  "reach": 0.2,  "frequency": 0.2,  "ambiguity": 0.05 } },
+    { "name": "Liam",      "gender": "m", "style_vector": { "era": 0.85, "softness": 0.6,  "reach": 0.95, "frequency": 0.45, "ambiguity": 0.15 } },
+    { "name": "Elena",     "gender": "f", "style_vector": { "era": 0.45, "softness": 0.65, "reach": 0.9,  "frequency": 0.4,  "ambiguity": 0.1  } },
+    { "name": "Emma",      "gender": "f", "style_vector": { "era": 0.6,  "softness": 0.7,  "reach": 0.6,  "frequency": 0.05, "ambiguity": 0.05 } },
+    { "name": "Paul",      "gender": "m", "style_vector": { "era": 0.4,  "softness": 0.4,  "reach": 0.55, "frequency": 0.05, "ambiguity": 0.05 } },
+    { "name": "Aurelian",  "gender": "m", "style_vector": { "era": 0.5,  "softness": 0.55, "reach": 0.6,  "frequency": 0.95, "ambiguity": 0.1  } },
+    { "name": "Fenja",     "gender": "f", "style_vector": { "era": 0.6,  "softness": 0.6,  "reach": 0.3,  "frequency": 0.9,  "ambiguity": 0.15 } },
+    { "name": "Julia",     "gender": "f", "style_vector": { "era": 0.35, "softness": 0.65, "reach": 0.6,  "frequency": 0.35, "ambiguity": 0.02 } },
+    { "name": "Stefan",    "gender": "m", "style_vector": { "era": 0.25, "softness": 0.4,  "reach": 0.5,  "frequency": 0.5,  "ambiguity": 0.02 } },
+    { "name": "Kim",       "gender": "neutral", "style_vector": { "era": 0.55, "softness": 0.5,  "reach": 0.7,  "frequency": 0.5,  "ambiguity": 0.95 } },
+    { "name": "Luca",      "gender": "neutral", "style_vector": { "era": 0.65, "softness": 0.7,  "reach": 0.75, "frequency": 0.3,  "ambiguity": 0.85 } }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "_comment": "Alle Parameter aus PRD Kapitel 14 (Offene Fragen). Absichtlich hier statt im Code, damit sie ohne Deploy testbar sind.",
+
+  "vetos": {
+    "_prd": "14.1 — 5 ist eine Hypothese.",
+    "perParent": 5
+  },
+
+  "recommendation": {
+    "_prd": "14.2 — Startgewichte aus 5.3.5, Schaetzungen.",
+    "w1_styleDistance": 0.45,
+    "w2_soundScore": 0.3,
+    "w3_novelty": 0.15,
+    "w4_penalty": 0.1,
+    "penalty": {
+      "_prd": "5.3.5 — Aehnlichkeit zu beidseitig abgelehnten Namen.",
+      "neighbourDistance": 0.15,
+      "minRejections": 2,
+      "perNeighbour": 0.35,
+      "max": 1
+    }
+  },
+
+  "deck": {
+    "_prd": "F3 — Mischverhaeltnis der drei Quellen.",
+    "shareBaseCorpus": 0.6,
+    "shareBridge": 0.25,
+    "shareDivergence": 0.15,
+    "divergenceMinDistance": 0.4,
+    "preloadCards": 50,
+    "batchSize": 24
+  },
+
+  "calibration": {
+    "_prd": "5.2.2 / F2",
+    "setSize": 20,
+    "recentWindow": 100,
+    "recentWeight": 2,
+    "rejectionWeight": 0.5,
+    "confidenceSpreadCap": 0.35,
+    "lowConfidenceThreshold": 0.4
+  },
+
+  "sound": {
+    "_prd": "5.1.2 — Ampelschwellen.",
+    "greenFrom": 75,
+    "yellowFrom": 50,
+    "spellingFrictionFrom": 2,
+    "siblingStyleBreakDistance": 0.6
+  },
+
+  "divergence": {
+    "_prd": "5.3.5 — Divergenz-Report bei Profil-Distanz > 0.5.",
+    "_abweichung": "Die 0.5 aus dem PRD sind mit der NORMIERTEN Distanz unerreichbar. Die Empfehlungsformel in 5.3.5 rechnet mit `1 - euklid_distanz` und braucht deshalb einen Wert in [0,1] — also die durch √5 geteilte Distanz. In dieser Skala erreichen selbst maximal gegensätzliche Profile nur 0.492 (gemessen mit scripts/probe-divergence.ts), weil Profile Mittelwerte sind und nie in den Ecken des Würfels liegen. Mit 0.5 wäre der Report tot. Gesetzt ist deshalb 0.5/√5 ≈ 0.224: dieselbe Zahl aus dem PRD, nur in der ROHEN Distanz gelesen. Sie löst bei etwa fünf Prozent der Paare aus.",
+    "reportProfileDistance": 0.224
+  },
+
+  "shortlist": {
+    "_prd": "F7 / F9",
+    "unlockAtMatches": 4,
+    "eloK": 32,
+    "eloStart": 1500,
+    "stableAfterComparisons": 12,
+    "secondNameValveAfterComparisons": 4
+  },
+
+  "notifications": {
+    "_prd": "14.5 — Default: gebuendelt am Abend. Begruendung siehe README.",
+    "matchDelivery": "bundled_evening",
+    "bundleHourLocal": 19,
+    "maxPushPerDayPerParent": 1
+  },
+
+  "sessions": {
+    "_prd": "14.7 — Default: nein, keine Gleichzeitigkeits-Erkennung im MVP.",
+    "detectConcurrentSwiping": false
+  },
+
+  "corpus": {
+    "_prd": "9.8 — Zielumfang MVP.",
+    "targetSize": 3000,
+    "minFrequencyTotal": 3
+  }
+}

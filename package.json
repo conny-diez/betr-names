@@ -1,0 +1,41 @@
+{
+  "name": "zwei-listen",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Namensfinder für werdende Eltern — moderiert eine Verhandlung, statt Namen zu suchen.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "corpus:fetch": "tsx pipeline/01-fetch.ts",
+    "corpus:clean": "tsx pipeline/02-clean.ts",
+    "corpus:normalize": "tsx pipeline/03-normalize.ts",
+    "corpus:merge": "tsx pipeline/04-merge.ts",
+    "corpus:phonemize": "tsx pipeline/05-phonemize.ts",
+    "corpus:enrich": "tsx pipeline/06-enrich.ts",
+    "corpus:vectorize": "tsx pipeline/07-vectorize.ts",
+    "corpus:validate": "tsx pipeline/08-validate.ts",
+    "corpus:export": "tsx pipeline/09-export.ts",
+    "corpus:build": "tsx pipeline/run-all.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "next": "^16.3.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2"
+  }
+}

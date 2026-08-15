@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+
+/*
+  Farbwelt und Rhythmus.
+
+  PRD 7, UI-Grundregeln: "Ablehnung wird nie visuell bestraft (kein rotes X,
+  kein Aufblitzen, kein Sound). Match-Feedback ist warm, aber nicht laut."
+  Deshalb eine gedämpfte, papierne Palette: warmes Off-White, Tinte statt
+  Schwarz, ein einziger Akzent. Die Ampel der Klang-Engine ist der lauteste
+  Farbeinsatz im ganzen Produkt — und selbst die ist entsättigt.
+*/
+@theme {
+  --color-paper: #faf7f2;
+  --color-paper-raised: #ffffff;
+  --color-ink: #23201c;
+  --color-ink-soft: #5c554c;
+  --color-ink-faint: #918a80;
+  --color-line: #e6e0d6;
+  --color-line-strong: #d5cdc0;
+
+  --color-accent: #7c6a58;
+  --color-accent-soft: #efe8de;
+
+  --color-light-green: #5f7d5a;
+  --color-light-green-bg: #eaf0e6;
+  --color-light-yellow: #8a7638;
+  --color-light-yellow-bg: #f5efdd;
+  --color-light-red: #a3625a;
+  --color-light-red-bg: #f6e7e4;
+
+  --color-super: #8a6d3f;
+  --color-super-bg: #f7eeda;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+
+  --radius-card: 1.25rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+/* Mobile first: das Produkt wird abends auf dem Sofa benutzt, einhändig. */
+.shell {
+  margin-inline: auto;
+  max-width: 32rem;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-surface {
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 2px rgb(35 32 28 / 0.04), 0 8px 24px -12px rgb(35 32 28 / 0.12);
+}
+
+.display-name {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* Der Swipe selbst. Keine Rückmeldung in Rot, keine Erschütterung. */
+.swipe-card {
+  touch-action: pan-y;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 320ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
