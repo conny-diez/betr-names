@@ -869,6 +869,37 @@ neu bauen:
 npm run corpus:build
 ```
 
+### `npm ci` scheitert mit 503 oder ENOTFOUND auf einem fremden Registry-Host
+
+**Fehler:**
+
+```
+npm error code E503
+npm error 503 Service Temporarily Unavailable - GET https://repository.example.com/artifactory/...
+```
+
+`package-lock.json` speichert für jedes Paket eine **absolute** `resolved`-URL.
+Wird die Datei auf einem Rechner mit firmeninterner Registry erzeugt, zeigen
+alle Einträge dorthin — und `npm ci` scheitert bei jedem ohne Zugang. Auch
+`--registry=https://registry.npmjs.org` hilft nicht: die URLs aus dem Lockfile
+gewinnen.
+
+**Lösung:** Das Projekt enthält eine `.npmrc`, die die öffentliche Registry
+festlegt. Damit bleibt der Lockfile unabhängig davon, wer ihn erzeugt.
+Ist er trotzdem einmal „vergiftet", nicht einfach löschen — das verwirft die
+gepinnten Versionen. Stattdessen neu erzeugen:
+
+```bash
+rm -f package-lock.json
+npm install --package-lock-only --registry=https://registry.npmjs.org/
+```
+
+Prüfen, dass nur noch ein Host vorkommt:
+
+```bash
+grep -oE '"resolved": "https?://[^/]+' package-lock.json | sort -u
+```
+
 ### `npm install` scheitert an `better-sqlite3`
 
 Für die Plattform gibt es kein vorkompiliertes Binary, der Bau aus dem
